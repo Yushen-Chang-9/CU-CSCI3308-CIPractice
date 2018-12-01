@@ -145,26 +145,19 @@ START_TEST(test_2d_midpoint)
 }
 END_TEST
 
-
-
-
-
-
-
-/*coord_2d_triangle_area Test*/
+/* coord_2d_area_triangle Test */
 START_TEST(test_2d_area)
 {
+    coord_2d_t a, b, c;
 
-   /* unit test 1 */
-   coord_2d_t a, b, c;
-   a.x = 0;
-   a.y = 0;
-   b.y = 0;
-   b.x = 2;
-   c.x = 1;
-   c.y = 1;
-
-   ck_assert(coord_2d_area_triangle(&a, &b, &c) ==1);
+    /* unit test 1 */
+    a.x = 0;
+    a.y = 0;
+    b.x = 2;
+    b.y = 0;
+    c.x = 1;
+    c.y = 1;
+    ck_assert(coord_2d_area_triangle(&a, &b, &c) == 1);
 
     /* unit test 2 */
     a.x = 5;
@@ -174,6 +167,7 @@ START_TEST(test_2d_area)
     c.x = 15;
     c.y = 15;
     ck_assert(coord_2d_area_triangle(&a, &b, &c) == 5);
+
 }
 END_TEST
 
@@ -207,12 +201,6 @@ Suite* coord_2d_suite(void)
     return s;
 
 }
-
-
-
-
-
-
 
 /* main: run test suites and set exit status */
 int main(void){
